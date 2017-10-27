@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <OpenGLES/ES3/gl.h>
+#import <OpenGLES/ES3/glext.h>
+#import <GLKit/GLKit.h>
 @interface ViewController : UIViewController
 
 
