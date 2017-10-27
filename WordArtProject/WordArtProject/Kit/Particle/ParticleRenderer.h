@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "BaseRenderer.h"
-@interface Particle : BaseRenderer
-
+@interface ParticleRenderer : BaseRenderer
+-(void) prepareToDraw;
 @end

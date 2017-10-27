@@ -19,8 +19,10 @@
 		9667FA671FA3256A00B0617E /* point.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 9667FA591FA3256A00B0617E /* point.vsh */; };
 		9667FA681FA3256A00B0617E /* GLKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9667FA5C1FA3256A00B0617E /* GLKitHelper.m */; };
 		9667FA691FA3256A00B0617E /* GLKitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9667FA5E1FA3256A00B0617E /* GLKitView.m */; };
-		9667FA6A1FA3256A00B0617E /* Particle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9667FA611FA3256A00B0617E /* Particle.m */; };
+		9667FA6A1FA3256A00B0617E /* ParticleRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9667FA611FA3256A00B0617E /* ParticleRenderer.m */; };
 		9667FA6B1FA3256A00B0617E /* Particle.png in Resources */ = {isa = PBXBuildFile; fileRef = 9667FA631FA3256A00B0617E /* Particle.png */; };
+		9667FA6E1FA32D8300B0617E /* particle.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 9667FA6C1FA32D8300B0617E /* particle.fsh */; };
+		9667FA6F1FA32D8300B0617E /* particle.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 9667FA6D1FA32D8300B0617E /* particle.vsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,9 +46,11 @@
 		9667FA5C1FA3256A00B0617E /* GLKitHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLKitHelper.m; sourceTree = "<group>"; };
 		9667FA5D1FA3256A00B0617E /* GLKitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLKitView.h; sourceTree = "<group>"; };
 		9667FA5E1FA3256A00B0617E /* GLKitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLKitView.m; sourceTree = "<group>"; };
-		9667FA601FA3256A00B0617E /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Particle.h; sourceTree = "<group>"; };
-		9667FA611FA3256A00B0617E /* Particle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Particle.m; sourceTree = "<group>"; };
+		9667FA601FA3256A00B0617E /* ParticleRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleRenderer.h; sourceTree = "<group>"; };
+		9667FA611FA3256A00B0617E /* ParticleRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticleRenderer.m; sourceTree = "<group>"; };
 		9667FA631FA3256A00B0617E /* Particle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Particle.png; sourceTree = "<group>"; };
+		9667FA6C1FA32D8300B0617E /* particle.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = particle.fsh; sourceTree = "<group>"; };
+		9667FA6D1FA32D8300B0617E /* particle.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = particle.vsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +135,10 @@
 		9667FA5F1FA3256A00B0617E /* Particle */ = {
 			isa = PBXGroup;
 			children = (
-				9667FA601FA3256A00B0617E /* Particle.h */,
-				9667FA611FA3256A00B0617E /* Particle.m */,
+				9667FA6C1FA32D8300B0617E /* particle.fsh */,
+				9667FA6D1FA32D8300B0617E /* particle.vsh */,
+				9667FA601FA3256A00B0617E /* ParticleRenderer.h */,
+				9667FA611FA3256A00B0617E /* ParticleRenderer.m */,
 			);
 			path = Particle;
 			sourceTree = "<group>";
@@ -207,8 +213,10 @@
 				9667FA6B1FA3256A00B0617E /* Particle.png in Resources */,
 				965613EC1FA2E1FF0015D31E /* Assets.xcassets in Resources */,
 				9667FA671FA3256A00B0617E /* point.vsh in Resources */,
+				9667FA6E1FA32D8300B0617E /* particle.fsh in Resources */,
 				9667FA661FA3256A00B0617E /* point.fsh in Resources */,
 				965613EA1FA2E1FF0015D31E /* Main.storyboard in Resources */,
+				9667FA6F1FA32D8300B0617E /* particle.vsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				965613E71FA2E1FF0015D31E /* ViewController.m in Sources */,
-				9667FA6A1FA3256A00B0617E /* Particle.m in Sources */,
+				9667FA6A1FA3256A00B0617E /* ParticleRenderer.m in Sources */,
 				965613F21FA2E1FF0015D31E /* main.m in Sources */,
 				965613E41FA2E1FF0015D31E /* AppDelegate.m in Sources */,
 				9667FA681FA3256A00B0617E /* GLKitHelper.m in Sources */,
