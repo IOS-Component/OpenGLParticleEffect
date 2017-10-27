@@ -7,9 +7,11 @@
 //
 
 #import "ViewController.h"
-
+#import "GLKitView.h"
 @interface ViewController ()
-
+@property(nonatomic,strong)GLKitView * glkView;
+@property(nonatomic,strong)GLKView
+@property
 @end
 
 @implementation ViewController

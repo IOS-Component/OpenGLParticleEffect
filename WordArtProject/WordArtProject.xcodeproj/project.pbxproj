@@ -13,6 +13,14 @@
 		965613EC1FA2E1FF0015D31E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 965613EB1FA2E1FF0015D31E /* Assets.xcassets */; };
 		965613EF1FA2E1FF0015D31E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965613ED1FA2E1FF0015D31E /* LaunchScreen.storyboard */; };
 		965613F21FA2E1FF0015D31E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 965613F11FA2E1FF0015D31E /* main.m */; };
+		9667FA641FA3256A00B0617E /* BaseRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9667FA541FA3256A00B0617E /* BaseRenderer.m */; };
+		9667FA651FA3256A00B0617E /* BrushRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9667FA571FA3256A00B0617E /* BrushRenderer.m */; };
+		9667FA661FA3256A00B0617E /* point.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 9667FA581FA3256A00B0617E /* point.fsh */; };
+		9667FA671FA3256A00B0617E /* point.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 9667FA591FA3256A00B0617E /* point.vsh */; };
+		9667FA681FA3256A00B0617E /* GLKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9667FA5C1FA3256A00B0617E /* GLKitHelper.m */; };
+		9667FA691FA3256A00B0617E /* GLKitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9667FA5E1FA3256A00B0617E /* GLKitView.m */; };
+		9667FA6A1FA3256A00B0617E /* Particle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9667FA611FA3256A00B0617E /* Particle.m */; };
+		9667FA6B1FA3256A00B0617E /* Particle.png in Resources */ = {isa = PBXBuildFile; fileRef = 9667FA631FA3256A00B0617E /* Particle.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +34,19 @@
 		965613EE1FA2E1FF0015D31E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		965613F01FA2E1FF0015D31E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		965613F11FA2E1FF0015D31E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9667FA531FA3256A00B0617E /* BaseRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRenderer.h; sourceTree = "<group>"; };
+		9667FA541FA3256A00B0617E /* BaseRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRenderer.m; sourceTree = "<group>"; };
+		9667FA561FA3256A00B0617E /* BrushRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrushRenderer.h; sourceTree = "<group>"; };
+		9667FA571FA3256A00B0617E /* BrushRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrushRenderer.m; sourceTree = "<group>"; };
+		9667FA581FA3256A00B0617E /* point.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = point.fsh; sourceTree = "<group>"; };
+		9667FA591FA3256A00B0617E /* point.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = point.vsh; sourceTree = "<group>"; };
+		9667FA5B1FA3256A00B0617E /* GLKitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLKitHelper.h; sourceTree = "<group>"; };
+		9667FA5C1FA3256A00B0617E /* GLKitHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLKitHelper.m; sourceTree = "<group>"; };
+		9667FA5D1FA3256A00B0617E /* GLKitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLKitView.h; sourceTree = "<group>"; };
+		9667FA5E1FA3256A00B0617E /* GLKitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLKitView.m; sourceTree = "<group>"; };
+		9667FA601FA3256A00B0617E /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Particle.h; sourceTree = "<group>"; };
+		9667FA611FA3256A00B0617E /* Particle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Particle.m; sourceTree = "<group>"; };
+		9667FA631FA3256A00B0617E /* Particle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Particle.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +79,8 @@
 		965613E11FA2E1FF0015D31E /* WordArtProject */ = {
 			isa = PBXGroup;
 			children = (
+				9667FA521FA3256A00B0617E /* Kit */,
+				9667FA621FA3256A00B0617E /* Resource */,
 				965613E21FA2E1FF0015D31E /* AppDelegate.h */,
 				965613E31FA2E1FF0015D31E /* AppDelegate.m */,
 				965613E51FA2E1FF0015D31E /* ViewController.h */,
@@ -69,6 +92,57 @@
 				965613F11FA2E1FF0015D31E /* main.m */,
 			);
 			path = WordArtProject;
+			sourceTree = "<group>";
+		};
+		9667FA521FA3256A00B0617E /* Kit */ = {
+			isa = PBXGroup;
+			children = (
+				9667FA531FA3256A00B0617E /* BaseRenderer.h */,
+				9667FA541FA3256A00B0617E /* BaseRenderer.m */,
+				9667FA551FA3256A00B0617E /* Brush */,
+				9667FA5A1FA3256A00B0617E /* Common */,
+				9667FA5F1FA3256A00B0617E /* Particle */,
+			);
+			path = Kit;
+			sourceTree = "<group>";
+		};
+		9667FA551FA3256A00B0617E /* Brush */ = {
+			isa = PBXGroup;
+			children = (
+				9667FA561FA3256A00B0617E /* BrushRenderer.h */,
+				9667FA571FA3256A00B0617E /* BrushRenderer.m */,
+				9667FA581FA3256A00B0617E /* point.fsh */,
+				9667FA591FA3256A00B0617E /* point.vsh */,
+			);
+			path = Brush;
+			sourceTree = "<group>";
+		};
+		9667FA5A1FA3256A00B0617E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9667FA5B1FA3256A00B0617E /* GLKitHelper.h */,
+				9667FA5C1FA3256A00B0617E /* GLKitHelper.m */,
+				9667FA5D1FA3256A00B0617E /* GLKitView.h */,
+				9667FA5E1FA3256A00B0617E /* GLKitView.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		9667FA5F1FA3256A00B0617E /* Particle */ = {
+			isa = PBXGroup;
+			children = (
+				9667FA601FA3256A00B0617E /* Particle.h */,
+				9667FA611FA3256A00B0617E /* Particle.m */,
+			);
+			path = Particle;
+			sourceTree = "<group>";
+		};
+		9667FA621FA3256A00B0617E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				9667FA631FA3256A00B0617E /* Particle.png */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,7 +204,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				965613EF1FA2E1FF0015D31E /* LaunchScreen.storyboard in Resources */,
+				9667FA6B1FA3256A00B0617E /* Particle.png in Resources */,
 				965613EC1FA2E1FF0015D31E /* Assets.xcassets in Resources */,
+				9667FA671FA3256A00B0617E /* point.vsh in Resources */,
+				9667FA661FA3256A00B0617E /* point.fsh in Resources */,
 				965613EA1FA2E1FF0015D31E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,8 +220,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				965613E71FA2E1FF0015D31E /* ViewController.m in Sources */,
+				9667FA6A1FA3256A00B0617E /* Particle.m in Sources */,
 				965613F21FA2E1FF0015D31E /* main.m in Sources */,
 				965613E41FA2E1FF0015D31E /* AppDelegate.m in Sources */,
+				9667FA681FA3256A00B0617E /* GLKitHelper.m in Sources */,
+				9667FA691FA3256A00B0617E /* GLKitView.m in Sources */,
+				9667FA641FA3256A00B0617E /* BaseRenderer.m in Sources */,
+				9667FA651FA3256A00B0617E /* BrushRenderer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
