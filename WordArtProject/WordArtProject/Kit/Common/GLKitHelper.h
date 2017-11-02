@@ -25,7 +25,7 @@ typedef struct {
 - (void)glTouchesEnded:(CGPoint) start  end:(CGPoint)end;
 @end
 @interface GLKitHelper : NSObject
-+(UIImage *) glToUIImage;
+-(UIImage *) glToUIImage;
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event view:(UIView *) view;
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event view:(UIView *) view;
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event view:(UIView *) view;
@@ -34,4 +34,7 @@ typedef struct {
 @property(nonatomic,weak) id<GLKHelperDelegate> delegate;
 //创建纹理
 - (textureInfo_t)createTexture:(NSString *)name;
+-(void)saveImageDocuments:(UIImage *)image named:(NSString*)names;
+-(NSMutableArray *)getDocumentImage;
+-(void) productGif:(NSMutableArray *) imageArray;
 @end

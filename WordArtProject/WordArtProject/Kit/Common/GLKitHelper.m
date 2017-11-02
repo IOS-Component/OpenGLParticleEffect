@@ -7,7 +7,8 @@
 //
 
 #import "GLKitHelper.h"
-
+#import <ImageIO/ImageIO.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 @interface GLKitHelper(){
     Boolean firstTouch;
 }
@@ -16,7 +17,7 @@
 @synthesize location;
 @synthesize previousLocation;
 //图片截取
-+(UIImage *) glToUIImage {
+-(UIImage *) glToUIImage {
     //计算fen'bian'lv
     CGRect rect_screen = [[UIScreen mainScreen]bounds];
     CGSize size_screen = rect_screen.size;
@@ -155,4 +156,67 @@
     return texture;
 }
 
+//保存图片
+-(void)saveImageDocuments:(UIImage *)image named:(NSString*)names{
+    //拿到图片
+    UIImage *imagesave = image;
+    NSString *path_sandox = NSHomeDirectory();
+    //设置一个图片的存储路径
+    NSString *imagePath = [path_sandox stringByAppendingString:[NSString stringWithFormat:@"/Documents/%@.png",names]];
+    //把图片直接保存到指定的路径（同时应该把图片的路径imagePath存起来，下次就可以直接用来取）
+    [UIImagePNGRepresentation(imagesave) writeToFile:imagePath atomically:YES];
+}
+
+//生成gif图片
+-(void) productGif:(NSMutableArray *) imageArray{
+    //创建爱你gif文件
+    NSArray *document = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *doucmentStr =[document objectAtIndex:0];
+    NSFileManager *filemanager = [NSFileManager defaultManager];
+    NSString *textDic = [doucmentStr stringByAppendingString:@"/gif"];
+    [filemanager createDirectoryAtPath:textDic withIntermediateDirectories:YES attributes:nil error:nil];
+    NSString *path = [textDic stringByAppendingString:@"article_particel.gif"];
+    NSLog(@"-----%@",path);
+    //配置gif属性
+    CGImageDestinationRef destion;
+    CFURLRef url = CFURLCreateWithFileSystemPath(kCFAllocatorDefault, (CFStringRef)path, kCFURLPOSIXPathStyle, false);
+    destion = CGImageDestinationCreateWithURL(url, kUTTypeGIF, imageArray.count, NULL);
+    NSDictionary *frameDic = [NSDictionary dictionaryWithObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:0.3],(NSString*)kCGImagePropertyGIFDelayTime, nil] forKey:(NSString*)kCGImagePropertyGIFDelayTime];
+    
+    NSMutableDictionary *gifParmdict = [NSMutableDictionary dictionaryWithCapacity:25];
+    [gifParmdict setObject:[NSNumber numberWithBool:YES] forKey:(NSString*)kCGImagePropertyGIFHasGlobalColorMap];
+    [gifParmdict setObject:(NSString*)kCGImagePropertyColorModelRGB forKey:(NSString*)kCGImagePropertyColorModel];
+    [gifParmdict setObject:[NSNumber numberWithInt:8] forKey:(NSString*)kCGImagePropertyDepth];
+    [gifParmdict setObject:[NSNumber numberWithInt:0] forKey:(NSString*)kCGImagePropertyGIFLoopCount];
+    NSDictionary *gifProperty = [NSDictionary dictionaryWithObject:gifParmdict forKey:(NSString*)kCGImagePropertyGIFDictionary];
+    
+    for (UIImage *dimage in imageArray) {
+        CGImageDestinationAddImage(destion, dimage.CGImage, (__bridge CFDictionaryRef)frameDic);
+    }
+    
+    CGImageDestinationSetProperties(destion,(__bridge CFDictionaryRef)gifProperty);
+    CGImageDestinationFinalize(destion);
+    CFRelease(destion);
+}
+
+//读取png,并加入gif图片中
+-(NSMutableArray *)getDocumentImage{
+    NSMutableArray *array=[[NSMutableArray alloc] init];
+    NSFileManager * file=[NSFileManager defaultManager];
+    NSString * docDirectionary=[NSString stringWithFormat:@"%@/Documents",NSHomeDirectory()];
+    NSArray * subPaths=[file contentsOfDirectoryAtPath:docDirectionary error:nil];
+    if(subPaths){
+        for(NSString * sub in subPaths){
+            if([sub hasPrefix:@"test_"]){
+                NSLog(@"获取test_的路径为:%@",sub);
+                NSString *aPath=[NSString stringWithFormat:@"%@/Documents/%@.png",NSHomeDirectory(),sub];
+                // 拿到沙盒路径图片
+                UIImage *imgFromUrl3=[[UIImage alloc]initWithContentsOfFile:aPath];
+                [array addObject:imgFromUrl3];
+            }
+        }
+    }
+    return array;
+   
+}
 @end

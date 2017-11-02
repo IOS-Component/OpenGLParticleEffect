@@ -13,6 +13,7 @@
 #import <OpenGLES/EAGLDrawable.h>
 @protocol GLKitViewDelegate<NSObject>
 -(void) renderGL;
+- (void)glkView:(UIView *)view drawInRect:(CGRect)rect;
 @end
 @interface GLKitView : UIView
 @property(nonatomic,strong) EAGLContext *mContext;
@@ -24,4 +25,5 @@
 //执行渲染
 -(void) renderFrame;
 -(instancetype)initWithFrame:(CGRect)frame context:(EAGLContext *) context;
+- (void)display;
 @end

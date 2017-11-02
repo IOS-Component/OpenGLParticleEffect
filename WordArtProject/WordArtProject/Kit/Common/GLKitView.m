@@ -59,6 +59,7 @@ typedef struct {
     if (!initialized) {
         initialized = [self initOpenGL];
     }
+    
 }
 -(BOOL) initOpenGL{
     // Generate IDs for a framebuffer object and a color renderbuffer
@@ -100,4 +101,19 @@ typedef struct {
 {
     return [CAEAGLLayer class];
 }
+
+-(void)drawRect:(CGRect)rect{
+    if(self.delegate && [self.delegate respondsToSelector:@selector(glkView:drawInRect:)]){
+        [self.delegate glkView:self drawInRect:rect];
+    }
+}
+
+-(void)display
+{
+//    [EAGLContext setCurrentContext:self.mContext];
+//    glViewport(0, 0,self.backingWidth, self.backingHeight);
+    [self drawRect:[self bounds]];
+//    [self.mContext presentRenderbuffer:GL_RENDERBUFFER];
+}
+
 @end
